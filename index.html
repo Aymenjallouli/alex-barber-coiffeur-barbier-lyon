@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alex Barber, coiffeur barbier à Lyon 2e</title>
+<meta name="description" content="Alex, barbier indépendant depuis 2012, 3 quai Jules Courmont, Lyon 2e. Coupes, barbe, tarifs et réservation sur Planity. 5,0 sur Google (114 avis).">
+<meta property="og:title" content="Alex Barber, coiffeur barbier à Lyon 2e">
+<meta property="og:description" content="Un seul barbier, toujours le même : Alex. Coupe, barbe et dégradés quai Jules Courmont, Lyon 2e.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F05A1E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F05A1E'/%3E%3Cpath d='M17 52 29 12h6l12 40h-8l-2.6-9H27.6L25 52Zm12.6-16h6.8L33 23.6Z' fill='%23141210'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Alex Barber - Coiffeur Barbier",
+  "description": "Barbier indépendant installé chez L’Indé Barbershop, quai Jules Courmont, Lyon 2e.",
+  "telephone": "+33658229648",
+  "image": "assets/photos/photo-05.jpg",
+  "url": "https://www.planity.com/alex-barber-69002-lyon",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Chez L’Indé Barbershop, 3 Quai Jules Courmont",
+    "postalCode": "69002",
+    "addressLocality": "Lyon",
+    "addressCountry": "FR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 45.762383799999995, "longitude": 4.8379866 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "09:00", "closes": "20:00" }
+  ],
+  "paymentAccepted": "Carte bancaire, espèces",
+  "sameAs": ["https://www.instagram.com/alx.barber/"]
+}
+</script>
+<style>
+/* ==========================================================================
+   DESIGN DECISIONS — Alex Barber, quai Jules Courmont, Lyon 2e
+   Direction : BOLD STREET. A one-man barber, black capes, a loud orange logo
+   on the cape (photo 08), clippers in hand. Condensed caps, hard edges, one
+   loud colour, a marquee of real review words.
+   Palette (from the photos) : ink #141210 = the black capes and Alex's tee ;
+   bone #EFEAE2 = the white salon walls under LED light ; orange #F05A1E =
+   the "Alex Barber" cape logo, used as THE single loud move (marquee, CTAs,
+   "ALEX" in the hero, contact band). Oak #C08A55 from the floor (photo 05)
+   only as a whisper on dark captions. Ink text on orange = 5.5:1.
+   Type : Anton (condensed display, caps, tight leading) + Archivo (robust
+   grotesk for body and labels, tracked caps for small labels).
+   Hero : framed action photo (photo 01, hands + clipper) on ink, with an
+   oversized three-line headline overlapping its bottom edge, "ALEX" in orange.
+   Rhythm : ink hero → orange marquee → bone proof (sticky 5,0 + quote rail) →
+   ink "le barbier" photo + big numbers → bone price list (sticky label) →
+   ink horizontal rail of cuts (signature) → bone hours/map split with live
+   status → orange contact rows → ink footer with the name cut out of a photo.
+   Shape : sharp 0 radius everywhere, 6px only on the map. No shadows.
+   ========================================================================== */
+:root{
+  --bg:#EFEAE2; --surface:#E5DED3; --ink:#141210; --ink-soft:#4B453E;
+  --brand:#F05A1E; --brand-ink:#141210; --accent:#C08A55; --line:rgba(20,18,16,.16);
+  --on-dark:#EFEAE2; --on-dark-soft:#B9B1A6; --line-dark:rgba(239,234,226,.16);
+
+  --step--1:clamp(.875rem,.85rem + .1vw,.94rem);
+  --step-0:clamp(1rem,.96rem + .2vw,1.125rem);
+  --step-1:clamp(1.2rem,1.1rem + .45vw,1.45rem);
+  --step-2:clamp(1.45rem,1.25rem + .9vw,2rem);
+  --step-3:clamp(1.9rem,1.45rem + 2vw,3rem);
+  --step-4:clamp(2.6rem,1.8rem + 3.6vw,4.6rem);
+  --step-5:clamp(3.2rem,2rem + 6vw,7rem);
+  --step-6:clamp(4.1rem,1rem + 16vw,11.5rem);
+
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px;
+  --space-6:32px; --space-7:48px; --space-8:64px; --space-9:96px; --space-10:128px;
+  --section:clamp(64px,12vw,160px);
+  --gutter:clamp(20px,5vw,48px);
+  --max:1280px;
+
+  --radius:0; --radius-soft:6px;
+  --ease-out:cubic-bezier(.16,1,.3,1); --ease-in-out:cubic-bezier(.65,0,.35,1);
+  --dur-1:180ms; --dur-2:400ms; --dur-3:800ms;
+  --bar-h:64px;
+  --display:"Anton","Impact","Arial Narrow",sans-serif;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:var(--step-0);line-height:1.6;
+  padding-bottom:calc(var(--bar-h) + env(safe-area-inset-bottom));-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:-.005em;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+ul,ol{margin:0;padding:0;list-style:none}
+::selection{background:var(--brand);color:var(--brand-ink)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+.dark :focus-visible,.hero :focus-visible{outline-color:var(--brand)}
+.contact :focus-visible{outline-color:var(--ink)}
+[id]{scroll-margin-top:72px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:var(--space-4);top:-80px;z-index:100;background:var(--brand);color:var(--brand-ink);padding:12px 16px;font-weight:700;text-decoration:none}
+.skip:focus{top:var(--space-4)}
+
+.wrap{width:100%;max-width:calc(var(--max) + 2*var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--space-4)}
+.dark{background:var(--ink);color:var(--on-dark)}
+.label{font-family:var(--sans);font-size:var(--step--1);font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.label .n{color:var(--brand)}
+.lede{font-size:var(--step-1);line-height:1.5;max-width:34ch}
+.link{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.22em;text-decoration-color:var(--brand)}
+.icon{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+
+/* Buttons */
+.btn{--h:52px;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:var(--h);padding:0 22px;
+  font:700 var(--step-0)/1 var(--sans);letter-spacing:.02em;text-decoration:none;border:2px solid currentColor;border-radius:var(--radius);
+  position:relative;overflow:hidden;isolation:isolate;transition:color var(--dur-1) var(--ease-out),transform var(--dur-1) var(--ease-out)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--on-dark);transform:translateY(101%);transition:transform var(--dur-2) var(--ease-out)}
+.btn:active{transform:scale(.97)}
+.btn--brand{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.btn--brand::before{background:var(--on-dark)}
+.btn--ghost{color:var(--on-dark)}
+.btn--ghost::before{background:var(--on-dark)}
+.btn--ink{background:var(--ink);border-color:var(--ink);color:var(--on-dark)}
+.btn--ink::before{background:var(--brand)}
+@media (hover:hover){
+  .btn:hover::before{transform:none}
+  .btn--ghost:hover,.btn--brand:hover{color:var(--ink)}
+  .btn--ink:hover{color:var(--ink)}
+  .btn:hover .icon{transform:translateX(3px)}
+}
+.btn .icon{transition:transform var(--dur-2) var(--ease-out)}
+
+/* Header */
+.header{position:fixed;inset:0 0 auto;z-index:50;color:var(--on-dark);transition:background var(--dur-2) var(--ease-out),border-color var(--dur-2)}
+.header__in{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);height:64px;transition:height var(--dur-2) var(--ease-out)}
+.header.is-scrolled{background:var(--ink);border-bottom:1px solid var(--line-dark)}
+.header.is-scrolled .header__in{height:54px}
+.mark{display:inline-flex;align-items:baseline;gap:8px;text-decoration:none;min-height:44px;align-items:center}
+.mark b{font:400 1.75rem/1 var(--display);letter-spacing:.01em;transition:font-size var(--dur-2) var(--ease-out)}
+.mark span{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--brand);padding-top:4px}
+.header.is-scrolled .mark b{font-size:1.45rem}
+.nav{display:none}
+.header__cta{display:none}
+.menu-btn{width:48px;height:48px;margin-right:-12px;display:grid;place-content:center;gap:7px;background:none;border:0;color:inherit;cursor:pointer}
+.menu-btn i{display:block;width:26px;height:2px;background:currentColor;transition:transform var(--dur-2) var(--ease-out)}
+.menu-btn[aria-expanded="true"] i:first-child{transform:translateY(4.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] i:last-child{transform:translateY(-4.5px) rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:40;background:var(--ink);color:var(--on-dark);padding:96px var(--gutter) calc(var(--bar-h) + 32px);
+  display:flex;flex-direction:column;justify-content:space-between;visibility:hidden;opacity:0;transition:opacity var(--dur-2) var(--ease-out),visibility 0s var(--dur-2)}
+.menu.is-open{visibility:visible;opacity:1;transition:opacity var(--dur-2) var(--ease-out)}
+.menu ol{counter-reset:m}
+.menu li{counter-increment:m;border-bottom:1px solid var(--line-dark);overflow:hidden}
+.menu li a{display:flex;align-items:baseline;gap:14px;padding:10px 0;font:400 clamp(2.4rem,11vw,3.6rem)/1 var(--display);text-transform:uppercase;text-decoration:none;
+  transform:translateY(105%);transition:transform var(--dur-3) var(--ease-out)}
+.menu li a::before{content:"0" counter(m);font:600 .8rem/1 var(--sans);letter-spacing:.14em;color:var(--brand)}
+.menu.is-open li a{transform:none}
+.menu.is-open li:nth-child(2) a{transition-delay:60ms}.menu.is-open li:nth-child(3) a{transition-delay:120ms}
+.menu.is-open li:nth-child(4) a{transition-delay:180ms}.menu.is-open li:nth-child(5) a{transition-delay:240ms}
+.menu__foot{display:grid;gap:var(--space-3);color:var(--on-dark-soft)}
+body.menu-open{overflow:hidden}
+
+/* Live badge */
+.badge{display:inline-flex;align-items:center;gap:10px;font-size:var(--step--1);font-weight:600;letter-spacing:.04em}
+.badge__dot{width:9px;height:9px;border-radius:50%;background:var(--on-dark-soft);flex:none}
+.badge.is-open .badge__dot{background:#5FD38D;box-shadow:0 0 0 0 rgba(95,211,141,.6);animation:pulse 2.4s var(--ease-out) infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(95,211,141,0)}100%{box-shadow:0 0 0 0 rgba(95,211,141,0)}}
+
+/* Hero */
+.hero{position:relative;padding-bottom:var(--space-7)}
+.hero__media{position:relative;height:40svh;min-height:280px;overflow:hidden}
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.55) 0%,rgba(20,18,16,0) 30%,rgba(20,18,16,0) 62%,var(--ink) 100%)}
+.hero__body{position:relative;margin-top:-2.6rem}
+.hero h1{font-size:clamp(4rem,18.5vw,10.5rem);line-height:.88}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.02em}
+.hero h1 .line > span{display:block}
+.hero h1 .alex{color:var(--brand)}
+.hero__sub{margin-top:var(--space-4);color:var(--on-dark-soft);max-width:36ch}
+.hero__sub strong{color:var(--on-dark);font-weight:600}
+.proofline{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:var(--space-4);font-weight:600}
+.stars{display:inline-flex;gap:2px;color:var(--brand)}
+.stars svg{width:18px;height:18px;fill:currentColor}
+.proofline a{color:var(--on-dark-soft);font-weight:400;text-decoration:underline;text-underline-offset:.22em;text-decoration-color:var(--line-dark)}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-5)}
+.hero__ctas .btn{flex:1 1 140px;white-space:nowrap}
+.wide{display:none}
+.hero__badge{position:absolute;left:var(--gutter);top:76px;z-index:2;color:var(--on-dark);background:rgba(20,18,16,.72);padding:8px 12px}
+.hero__tag{position:absolute;right:var(--gutter);top:84px;z-index:2;writing-mode:vertical-rl;transform:rotate(180deg);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--on-dark)}
+
+/* Marquee */
+.marquee{background:var(--brand);color:var(--brand-ink);overflow:hidden;border-block:2px solid var(--ink)}
+.marquee__track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marquee ul{display:flex;align-items:center;flex:none}
+.marquee li{display:flex;align-items:center;gap:22px;padding:16px 11px;font:400 clamp(1.5rem,5vw,2.6rem)/1 var(--display);text-transform:uppercase;white-space:nowrap}
+.marquee li svg{width:22px;height:22px;fill:currentColor;flex:none}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* Proof */
+.proof{padding-block:var(--section)}
+.proof__score{grid-column:1/-1}
+.score{display:flex;align-items:flex-end;gap:var(--space-4);margin-top:var(--space-5)}
+.score__num{font:400 clamp(7rem,40vw,13rem)/.8 var(--display);letter-spacing:-.02em}
+.score__meta{padding-bottom:6px;display:grid;gap:6px}
+.score__meta .stars svg{width:22px;height:22px}
+.score__meta p{font-weight:600;line-height:1.3}
+.proof__title{margin-top:var(--space-6);font-size:var(--step-4);max-width:14ch}
+.proof__aside{margin-top:var(--space-4);color:var(--ink-soft);max-width:40ch}
+.proof__links{margin-top:var(--space-5);display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.rail{grid-column:1/-1;margin-top:var(--space-7);display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:var(--space-4);
+  overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;
+  margin-inline:calc(-1*var(--gutter));padding-inline:var(--gutter);scroll-padding-inline:var(--gutter)}
+.rail::-webkit-scrollbar{display:none}
+.review{scroll-snap-align:start;border-top:4px solid var(--ink);padding-top:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4)}
+.review blockquote{margin:0;font-size:var(--step-1);line-height:1.45;font-weight:400}
+.review blockquote p::before{content:"“";font:400 3.2rem/0 var(--display);color:var(--brand);display:block;height:.5em;margin:.3em 0 .1em}
+.review footer{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:var(--space-3);font-size:var(--step--1);color:var(--ink-soft)}
+.review cite{font-style:normal;font-weight:700;color:var(--ink);letter-spacing:.06em;text-transform:uppercase}
+.review .stars svg{width:15px;height:15px}
+.rail-hint{grid-column:1/-1;margin-top:var(--space-4);font-size:var(--step--1);color:var(--ink-soft);display:flex;align-items:center;gap:8px}
+
+/* Barber */
+.barber{padding-block:var(--section)}
+.barber__media{grid-column:1/-1;position:relative;margin-inline:calc(-1*var(--gutter))}
+.barber__media img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 60%}
+.barber__cap{position:absolute;left:var(--gutter);bottom:var(--space-4);font-size:var(--step--1);color:var(--on-dark);background:var(--ink);padding:6px 10px}
+.barber__panel{grid-column:1/-1;position:relative;margin-top:calc(-1*var(--space-9));background:var(--ink);padding:var(--space-6) var(--space-5) 0 0;margin-right:var(--space-6)}
+.barber h2{font-size:var(--step-5);margin-top:var(--space-4)}
+.barber h2 em{font-style:normal;color:var(--brand)}
+.barber__text{margin-top:var(--space-5);color:var(--on-dark-soft);max-width:52ch}
+.barber__text strong{color:var(--on-dark);font-weight:600}
+.facts{grid-column:1/-1;margin-top:var(--space-7);display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line-dark)}
+.facts li{padding:var(--space-5) var(--space-4) var(--space-5) 0;border-bottom:1px solid var(--line-dark)}
+.facts li:nth-child(odd){border-right:1px solid var(--line-dark)}
+.facts li:nth-child(even){padding-left:var(--space-4)}
+.facts b{display:block;font:400 clamp(2.6rem,12vw,4.6rem)/.9 var(--display);color:var(--on-dark)}
+.facts li:first-child b{color:var(--brand)}
+.facts span{display:block;margin-top:var(--space-2);font-size:var(--step--1);color:var(--on-dark-soft);line-height:1.4}
+
+/* Price list */
+.carte{padding-block:var(--section)}
+.carte__head{grid-column:1/-1}
+.contact__intro,.rows{grid-column:1/-1}
+.carte h2{font-size:var(--step-6);margin-top:var(--space-3)}
+.carte__intro{margin-top:var(--space-4);color:var(--ink-soft);max-width:40ch}
+.carte__cta{margin-top:var(--space-5)}
+.carte__list{grid-column:1/-1;margin-top:var(--space-8)}
+.group + .group{margin-top:var(--space-8)}
+.group h3{font:600 var(--step--1)/1 var(--sans);letter-spacing:.14em;display:flex;gap:12px;align-items:center;padding-bottom:var(--space-3);border-bottom:3px solid var(--ink)}
+.group h3 .n{color:var(--brand);font-family:var(--display);font-size:1.4rem;letter-spacing:0}
+.price{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:4px var(--space-4);padding:var(--space-4) 0;border-bottom:1px solid var(--line)}
+.price__name{font:400 var(--step-2)/1.05 var(--display);text-transform:uppercase;text-wrap:balance}
+.price__dur{grid-column:1;font-size:var(--step--1);color:var(--ink-soft);letter-spacing:.04em}
+.price__val{grid-row:1/span 2;grid-column:2;align-self:center;font:400 var(--step-3)/1 var(--display);white-space:nowrap}
+@media (hover:hover){.price{transition:padding var(--dur-2) var(--ease-out)}.price:hover{padding-left:10px}.price:hover .price__val{color:var(--brand)}}
+
+/* Cuts rail (signature) */
+.cuts{padding-block:var(--section);overflow:hidden}
+.cuts__head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:var(--space-5)}
+.cuts h2{font-size:var(--step-6)}
+.cuts h2 span{display:block;color:var(--brand)}
+.cuts__note{color:var(--on-dark-soft);max-width:34ch}
+.cuts__rail{margin-top:var(--space-7);display:flex;gap:var(--space-4);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+  padding-inline:var(--gutter);scroll-padding-inline:var(--gutter);overscroll-behavior-x:contain}
+.cuts__rail::-webkit-scrollbar{display:none}
+.cut{flex:0 0 76%;scroll-snap-align:start;margin:0}
+.cut__img{overflow:hidden;background:#221f1c}
+.cut img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform var(--dur-3) var(--ease-out)}
+.cut figcaption{display:flex;gap:12px;align-items:baseline;margin-top:var(--space-3);font-size:var(--step--1);color:var(--on-dark-soft)}
+.cut figcaption b{font:400 1.25rem/1 var(--display);color:var(--brand)}
+@media (hover:hover){.cut:hover img{transform:scale(1.03)}}
+.cuts__ctrl{display:flex;gap:var(--space-2)}
+.cuts__ctrl button{width:52px;height:52px;display:grid;place-items:center;background:none;color:var(--on-dark);border:2px solid var(--line-dark);cursor:pointer;transition:border-color var(--dur-1),background var(--dur-1),color var(--dur-1)}
+.cuts__ctrl button:hover{background:var(--brand);border-color:var(--brand);color:var(--ink)}
+.cuts__ctrl button:disabled{opacity:.35;pointer-events:none}
+.cuts__foot{display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);margin-top:var(--space-6)}
+.cuts__foot a{color:var(--on-dark)}
+.cuts__progress{flex:1;height:2px;background:var(--line-dark);position:relative;max-width:240px}
+.cuts__progress i{position:absolute;inset:0;background:var(--brand);transform-origin:left;transform:scaleX(var(--p,.17))}
+
+/* Hours & map */
+.visit{padding-block:var(--section)}
+.visit__a,.visit__b{grid-column:1/-1}
+.status{margin-top:var(--space-4)}
+.status__big{font:400 var(--step-6)/.86 var(--display);text-transform:uppercase}
+.status__big.is-open{color:var(--ink)}
+.status__big .dot{display:inline-block;width:.18em;height:.18em;border-radius:50%;background:var(--brand);vertical-align:.55em;margin-left:.08em}
+.status__small{margin-top:var(--space-3);font-size:var(--step-1);font-weight:600}
+.visit h2.alt{font-size:var(--step-6);margin-top:var(--space-4)}
+.hours{margin-top:var(--space-6);border-top:3px solid var(--ink);width:100%;border-collapse:collapse}
+.hours th,.hours td{padding:13px 0;border-bottom:1px solid var(--line);text-align:left;font-weight:400}
+.hours th{text-transform:capitalize;font-weight:600}
+.hours td{text-align:right;font-variant-numeric:tabular-nums}
+.hours tr.closed td{color:var(--ink-soft)}
+.hours tr.today th,.hours tr.today td{font-weight:700;color:var(--ink)}
+.hours tr.today th{position:relative;padding-left:18px}
+.hours tr.today th::before{content:"";position:absolute;left:0;top:50%;width:8px;height:8px;margin-top:-4px;background:var(--brand)}
+.hours .today-tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-left:8px;font-weight:600}
+.visit__note{margin-top:var(--space-4);font-size:var(--step--1);color:var(--ink-soft)}
+.visit__b{margin-top:var(--space-8)}
+.map{position:relative;border-radius:var(--radius-soft);overflow:hidden;background:var(--surface);aspect-ratio:4/5;border:2px solid var(--ink)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05)}
+.map__fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:var(--space-5)}
+.addr{margin-top:var(--space-5);display:grid;gap:var(--space-4)}
+.addr__line{display:flex;gap:var(--space-3);align-items:flex-start}
+.addr__line .icon{margin-top:4px}
+.addr strong{display:block;font:400 var(--step-2)/1.05 var(--display);text-transform:uppercase}
+.addr__ctas{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-2)}
+.addr__ctas .btn{flex:1 1 160px}
+
+/* Contact */
+.contact{background:var(--brand);color:var(--brand-ink);padding-block:var(--section)}
+.contact h2{font-size:var(--step-5);max-width:11ch}
+.contact__sub{margin-top:var(--space-4);max-width:40ch;font-weight:600}
+.rows{margin-top:var(--space-7);border-top:3px solid var(--ink)}
+.rows a{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:var(--space-4);padding:var(--space-5) 0;border-bottom:1px solid rgba(20,18,16,.3);text-decoration:none;position:relative;isolation:isolate}
+.rows a::before{content:"";position:absolute;inset:0 calc(-1*var(--gutter));background:var(--ink);z-index:-1;transform:scaleY(0);transform-origin:bottom;transition:transform var(--dur-2) var(--ease-out)}
+.rows .t{font:400 var(--step-3)/1 var(--display);text-transform:uppercase}
+.rows .s{display:block;font:600 var(--step--1)/1.3 var(--sans);letter-spacing:.04em;margin-top:6px}
+.rows .icon{width:26px;height:26px}
+.rows .arrow{transition:transform var(--dur-2) var(--ease-out)}
+.rows a:active::before{transform:none}
+.rows a:active{color:var(--brand)}
+@media (hover:hover){.rows a:hover::before{transform:none}.rows a:hover{color:var(--brand)}.rows a:hover .arrow{transform:translate(4px,-4px)}}
+.rows a{transition:color var(--dur-2) var(--ease-out)}
+
+/* Footer */
+.footer{padding-top:var(--space-9);padding-bottom:var(--space-7)}
+.bigname{font:400 clamp(6rem,52vw,34rem)/.8 var(--display);text-transform:uppercase;letter-spacing:-.02em;margin:0 0 var(--space-6) -.04em;color:var(--brand);user-select:none}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .bigname{background:url("assets/photos/photo-01.jpg") 58% 42%/cover;-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+.footer__grid{display:grid;gap:var(--space-6);border-top:1px solid var(--line-dark);padding-top:var(--space-6)}
+.footer p,.footer address{font-style:normal;color:var(--on-dark-soft);font-size:var(--step--1);line-height:1.7}
+.footer strong{color:var(--on-dark);font-weight:600}
+.footer__links{display:flex;flex-wrap:wrap;gap:var(--space-2) var(--space-5)}
+.footer__links a{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--on-dark);text-decoration:none;font-weight:600}
+.footer__links a:hover{color:var(--brand)}
+.footer__legal{margin-top:var(--space-7);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3)}
+
+/* Sticky action bar (mobile) */
+.bar{position:fixed;inset:auto 0 0;z-index:45;display:grid;grid-template-columns:1.25fr 1fr 1fr;background:var(--ink);border-top:1px solid var(--line-dark);padding-bottom:env(safe-area-inset-bottom)}
+.bar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:var(--bar-h);color:var(--on-dark);text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.bar a + a{border-left:1px solid var(--line-dark)}
+.bar a:first-child{background:var(--brand);color:var(--brand-ink)}
+.bar a:active{opacity:.75}
+
+/* Reveal system (only when JS is present) */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out);transition-delay:calc(var(--i,0)*70ms)}
+.js .rv.in{opacity:1;transform:none}
+.js .hero h1 .line > span{transform:translateY(105%);transition:transform 900ms var(--ease-out);transition-delay:calc(150ms + var(--i,0)*80ms)}
+.js .hero__media img{clip-path:inset(0 0 100% 0);transform:scale(1.08);transition:clip-path 1000ms var(--ease-in-out),transform 1400ms var(--ease-out)}
+.js .header{opacity:0;transition:opacity var(--dur-2) var(--ease-out),background var(--dur-2)}
+.js .hero-fade{opacity:0;transform:translateY(14px);transition:opacity var(--dur-3) var(--ease-out) 600ms,transform var(--dur-3) var(--ease-out) 600ms}
+.js.loaded .header{opacity:1}
+.js.loaded .hero h1 .line > span{transform:none}
+.js.loaded .hero__media img{clip-path:inset(0);transform:none}
+.js.loaded .hero-fade{opacity:1;transform:none}
+@supports (animation-timeline:view()){
+  .hero__media img{animation:parallax linear both;animation-timeline:scroll(root);animation-range:0px 100vh}
+  @keyframes parallax{to{translate:0 14%}}
+}
+
+/* ---------- 640 ---------- */
+@media (min-width:640px){
+  .review{grid-column:auto}
+  .rail{grid-auto-columns:minmax(300px,46%)}
+  .cut{flex-basis:44%}
+  .facts{grid-template-columns:repeat(4,1fr)}
+  .facts li:nth-child(odd){border-right:0}
+  .facts li + li{padding-left:var(--space-4);border-left:1px solid var(--line-dark)}
+  .footer__grid{grid-template-columns:1fr 1fr}
+  .map{aspect-ratio:4/3}
+}
+/* ---------- 768: desktop header, no bottom bar ---------- */
+@media (min-width:768px){
+  body{padding-bottom:0}
+  .bar{display:none}
+  .menu{padding-bottom:48px}
+}
+/* ---------- 960 ---------- */
+@media (min-width:960px){
+  .grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--space-5)}
+  [id]{scroll-margin-top:60px}
+  .menu-btn,.menu{display:none}
+  .nav{display:flex;gap:var(--space-5)}
+  .nav a{position:relative;display:inline-flex;align-items:center;min-height:44px;font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+  .nav a::after{content:"";position:absolute;left:0;right:0;bottom:10px;height:2px;background:var(--brand);transform:scaleX(0);transform-origin:right;transition:transform var(--dur-2) var(--ease-out)}
+  .nav a:hover::after{transform:scaleX(1);transform-origin:left}
+  .header__cta{display:inline-flex;--h:44px;font-size:.9rem}
+
+  .hero{min-height:min(100svh,920px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--space-5);padding:0;
+    padding-left:max(var(--gutter),calc((100vw - var(--max))/2))}
+  .hero__media{grid-column:6/-1;grid-row:1;height:auto;min-height:0;margin-right:0}
+  .hero__media::after{background:linear-gradient(90deg,var(--ink) 0%,rgba(20,18,16,.25) 28%,rgba(20,18,16,0) 55%),linear-gradient(180deg,rgba(20,18,16,.5),rgba(20,18,16,0) 22%)}
+  .hero__body{grid-column:1/10;grid-row:1;align-self:end;margin:0;padding:140px 0 var(--space-9);z-index:2}
+  .hero__body.wrap{padding-inline:0;max-width:none}
+  .hero h1{font-size:clamp(6rem,10.5vw,10.5rem)}
+  .hero__sub{max-width:40ch;font-size:var(--step-1)}
+  .hero__ctas .btn{flex:0 0 auto}
+  .wide{display:inline}.narrow{display:none}
+  .hero__badge{left:auto;right:var(--gutter);top:auto;bottom:var(--space-6)}
+  .hero__tag{top:auto;bottom:var(--space-9);right:var(--gutter)}
+
+  .proof__score{grid-column:1/6;position:sticky;top:110px;align-self:start}
+  .rail{grid-column:7/-1;grid-row:1/span 3;margin:0;padding:0;overflow:visible;grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:1fr 1fr;gap:var(--space-8) var(--space-6)}
+  .review:first-child{grid-column:1/-1}
+  .review:first-child blockquote{font-size:var(--step-2);line-height:1.3}
+  .review:nth-child(3),.review:nth-child(5){translate:0 var(--space-8)}
+  .rail{padding-bottom:var(--space-8)}
+  .rail-hint{display:none}
+
+  .barber__media{grid-column:1/7;grid-row:1/span 2;margin:0;align-self:start}
+  .barber__media{align-self:stretch !important}
+  .barber__media img{aspect-ratio:auto;height:100%;min-height:640px}
+  .barber__panel{grid-column:6/-1;grid-row:1;align-self:end;margin:0 0 var(--space-8);padding:var(--space-7) 0 0 var(--space-7)}
+  .barber__cap{left:var(--space-4)}
+  .facts{grid-column:7/-1;grid-row:2;align-self:start;margin-top:0}
+  .facts li{padding-block:var(--space-6)}
+
+  .carte__head{grid-column:1/6;position:sticky;top:100px;align-self:start}
+  .carte__list{grid-column:7/-1;margin-top:0}
+
+  .cut{flex-basis:30%}
+
+  .visit__a{grid-column:1/6}
+  .visit__b{grid-column:7/-1;margin-top:0;padding-top:var(--space-4)}
+  .map{aspect-ratio:5/4}
+
+  .contact .contact__intro{grid-column:1/6;align-self:start}
+  .contact .rows{grid-column:7/-1;margin-top:0}
+  .footer__grid{grid-template-columns:2fr 1fr 1fr}
+}
+@media (min-width:1280px){
+  .cut{flex-basis:26%}
+  .cuts__rail{padding-left:max(var(--gutter),calc((100vw - var(--max))/2 + var(--gutter)))}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .js .rv,.js .hero-fade,.js .header{opacity:1;transform:none}
+  .js .hero h1 .line > span,.js .hero__media img{transform:none;clip-path:none}
+  .marquee__track{width:auto;flex-wrap:wrap}
+  .marquee ul[aria-hidden]{display:none}
+  .marquee ul{flex-wrap:wrap}
+}
+</style>
+<!--sf:preview--><meta name="robots" content="noindex, nofollow"><!--/sf:preview-->
+<!--sf:og--><meta property="og:image" content="https://alex-barber-coiffeur-barbier-lyon.aymenjallouli.dev/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://alex-barber-coiffeur-barbier-lyon.aymenjallouli.dev/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://alex-barber-coiffeur-barbier-lyon.aymenjallouli.dev/og.jpg"><!--/sf:og-->
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol>
+  <symbol id="spark" viewBox="0 0 24 24"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></symbol>
+</svg>
+
+<header class="header" id="top">
+  <div class="wrap header__in">
+    <a class="mark" href="#main" aria-label="Alex Barber, retour en haut"><b>ALEX</b><span>Barber</span></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#avis">Avis</a><a href="#barbier">Le barbier</a><a href="#carte">Tarifs</a><a href="#coupes">Coupes</a><a href="#horaires">Horaires</a>
+    </nav>
+    <a class="btn btn--brand header__cta" href="https://www.planity.com/alex-barber-69002-lyon" target="_blank" rel="noopener">Réserver</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-label="Menu">
+  <ol>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#barbier">Le barbier</a></li>
+    <li><a href="#carte">Tarifs</a></li>
+    <li><a href="#coupes">Coupes</a></li>
+    <li><a href="#horaires">Horaires &amp; accès</a></li>
+  </ol>
+  <div class="menu__foot">
+    <span class="badge" data-badge><span class="badge__dot"></span><span data-badge-text>Lun.–jeu. 9h–20h</span></span>
+    <span>3 quai Jules Courmont, Lyon 2e</span>
+  </div>
+</div>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero dark" aria-labelledby="h1">
+    <div class="hero__media">
+      <img src="assets/photos/photo-01.jpg" width="1600" height="1245" fetchpriority="high"
+           alt="Alex en plein dégradé à la tondeuse, la main posée sur l’oreille de son client">
+    </div>
+    <span class="badge hero__badge hero-fade" data-badge><span class="badge__dot"></span><span data-badge-text>Lun.–jeu. 9h–20h</span></span>
+    <span class="badge hero__badge hero-fade" data-badge><span class="badge__dot"></span><span data-badge-text>Lun.–jeu. 9h–20h</span></span>
+    <span class="hero__tag hero-fade">Lyon 2e · Quai Jules Courmont</span>
+    <div class="hero__body wrap">
+      <h1 id="h1">
+        <span class="line"><span style="--i:0">Ici, c’est</span></span>
+        <span class="line"><span class="alex" style="--i:1">Alex</span></span>
+        <span class="line"><span style="--i:2">qui coupe.</span></span>
+      </h1>
+      <p class="hero__sub hero-fade"><strong>Barbier depuis 2012, seul au fauteuil.</strong> Coupe, barbe et dégradés chez L’Indé Barbershop, 3&nbsp;quai Jules Courmont.</p>
+      <p class="proofline hero-fade">
+        <span class="stars" aria-hidden="true"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+        <span>5,0 · 114 avis Google</span>
+      </p>
+      <div class="hero__ctas hero-fade">
+        <a class="btn btn--brand" href="https://www.planity.com/alex-barber-69002-lyon" target="_blank" rel="noopener">Réserver<span class="wide"> sur Planity</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="tel:+33658229648">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="narrow">Appeler</span><span class="wide">06 58 22 96 48</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE: verbatim fragments of Google reviews -->
+  <div class="marquee" role="region" aria-label="Extraits d’avis clients">
+    <div class="marquee__track">
+      <ul>
+        <li>« À l’écoute »<svg aria-hidden="true"><use href="#spark"/></svg></li>
+        <li>« Précis et très attentif aux détails »<svg aria-hidden="true"><use href="#spark"/></svg></li>
+        <li>« Sans précipitation »<svg aria-hidden="true"><use href="#spark"/></svg></li>
+        <li>« Il me coupe depuis 3 ans »<svg aria-hidden="true"><use href="#spark"/></svg></li>
+        <li>« Exactement ce que je voulais »<svg aria-hidden="true"><use href="#spark"/></svg></li>
+        <li>« Super ambiance »<svg aria-hidden="true"><use href="#spark"/></svg></li>
+      </ul>
+      <ul aria-hidden="true">
+        <li>« À l’écoute »<svg><use href="#spark"/></svg></li>
+        <li>« Précis et très attentif aux détails »<svg><use href="#spark"/></svg></li>
+        <li>« Sans précipitation »<svg><use href="#spark"/></svg></li>
+        <li>« Il me coupe depuis 3 ans »<svg><use href="#spark"/></svg></li>
+        <li>« Exactement ce que je voulais »<svg><use href="#spark"/></svg></li>
+        <li>« Super ambiance »<svg><use href="#spark"/></svg></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROOF -->
+  <section class="proof" id="avis" aria-labelledby="avis-t">
+    <div class="wrap grid">
+      <div class="proof__score">
+        <p class="label rv"><span class="n">01</span> — Ce que disent les clients</p>
+        <div class="score rv">
+          <span class="score__num" aria-hidden="true">5,0</span>
+          <div class="score__meta">
+            <span class="stars" aria-hidden="true"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>
+            <p>Note Google<br>114 avis</p>
+          </div>
+        </div>
+        <h2 class="proof__title rv" id="avis-t">On ressort avec le sourire.</h2>
+        <p class="proof__aside rv">Écoute, conseils, précision&nbsp;: ce sont les mots qui reviennent. Et 5,0 sur Planity aussi, sur 150&nbsp;avis.</p>
+        <div class="proof__links rv">
+          <a class="btn btn--ink" href="https://www.google.com/maps/place/?q=place_id:ChIJITRLkrXr9EcR5LC0roL-YsY" target="_blank" rel="noopener">Voir les 114 avis sur Google
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+
+      <div class="rail" tabindex="0" aria-label="Avis Google, faites défiler">
+        <article class="review rv">
+          <blockquote><p>Le coiffeur est à l’écoute, précis et très attentif aux détails. La coupe est exactement ce que je voulais, réalisée avec maîtrise et sans précipitation.</p></blockquote>
+          <footer><cite>Toine M.</cite><span class="stars" role="img" aria-label="5 étoiles sur 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></footer>
+        </article>
+        <article class="review rv" style="--i:1">
+          <blockquote><p>Alex est à l’écoute, il donne des bons conseils sur les cheveux et le coiffage et il coupe très très bien…</p></blockquote>
+          <footer><cite>Axel C.</cite><span class="stars" role="img" aria-label="5 étoiles sur 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></footer>
+        </article>
+        <article class="review rv" style="--i:2">
+          <blockquote><p>Encore un grand merci à Alex pour son expertise et sa sympathie, il me coupe depuis 3 ans, je suis toujours très content des coupes réalisées.</p></blockquote>
+          <footer><cite>El H.</cite><span class="stars" role="img" aria-label="5 étoiles sur 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></footer>
+        </article>
+        <article class="review rv" style="--i:3">
+          <blockquote><p>Un accueil, une écoute, des conseils et un professionnalisme du début jusqu’à la fin…</p></blockquote>
+          <footer><cite>mickael D.</cite><span class="stars" role="img" aria-label="5 étoiles sur 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></footer>
+        </article>
+        <article class="review rv" style="--i:4">
+          <blockquote><p>Super salon à visiter pour une coupe agréable. Toutes les variétés de style, super réalisation, super ambiance…</p></blockquote>
+          <footer><cite>Théo B.</cite><span class="stars" role="img" aria-label="5 étoiles sur 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></footer>
+        </article>
+      </div>
+      <p class="rail-hint" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Faites glisser pour lire la suite</p>
+    </div>
+  </section>
+
+  <!-- THE BARBER -->
+  <section class="barber dark" id="barbier" aria-labelledby="barbier-t">
+    <div class="wrap grid">
+      <figure class="barber__media rv" style="margin-block:0">
+        <img src="assets/photos/photo-05.jpg" width="1067" height="1600" loading="lazy" decoding="async"
+             alt="Le poste d’Alex : fauteuil de barbier bordeaux, miroir éclairé et vitrine donnant sur le quai">
+        <figcaption class="barber__cap">Le poste, côté quai</figcaption>
+      </figure>
+      <div class="barber__panel">
+        <p class="label rv"><span class="n">02</span> — Le barbier</p>
+        <h2 class="rv" id="barbier-t">Vous ne tombez jamais sur <em>quelqu’un d’autre.</em></h2>
+        <p class="barber__text rv"><strong>Alex travaille seul, en indépendant, chez L’Indé Barbershop.</strong> Barbier depuis 2012, titulaire d’un CAP et d’un diplôme professionnel de barbier. Celui qui écoute ce que vous voulez est celui qui tient la tondeuse, du premier conseil à la dernière finition.</p>
+      </div>
+      <ul class="facts">
+        <li class="rv"><b>2012</b><span>Barbier depuis</span></li>
+        <li class="rv" style="--i:1"><b>CAP</b><span>+ diplôme professionnel de barbier</span></li>
+        <li class="rv" style="--i:2"><b>1</b><span>barbier, le même à chaque rendez-vous</span></li>
+        <li class="rv" style="--i:3"><b>CB</b><span>carte bancaire et espèces acceptées</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section class="carte" id="carte" aria-labelledby="carte-t">
+    <div class="wrap grid">
+      <div class="carte__head">
+        <p class="label rv"><span class="n">03</span> — Tarifs</p>
+        <h2 class="rv" id="carte-t">La carte</h2>
+        <p class="carte__intro rv">Onze prestations, des prix nets, la durée annoncée. Les tarifs sont ceux publiés sur Planity.</p>
+        <a class="btn btn--ink carte__cta rv" href="https://www.planity.com/alex-barber-69002-lyon" target="_blank" rel="noopener">Choisir un créneau
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="carte__list">
+        <div class="group">
+          <h3 class="rv"><span class="n">A</span>La coupe</h3>
+          <ul>
+            <li class="price rv"><span class="price__name">La Coupe</span><span class="price__dur">30 min</span><span class="price__val">30&nbsp;€</span></li>
+            <li class="price rv"><span class="price__name">La Coupe Confort</span><span class="price__dur">1 h</span><span class="price__val">40&nbsp;€</span></li>
+            <li class="price rv"><span class="price__name">La Coupe Cheveux Longs</span><span class="price__dur">1 h</span><span class="price__val">45&nbsp;€</span></li>
+            <li class="price rv"><span class="price__name">La Coupe Transformation</span><span class="price__dur">1 h</span><span class="price__val">45&nbsp;€</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3 class="rv"><span class="n">B</span>La barbe</h3>
+          <ul>
+            <li class="price rv"><span class="price__name">La Barbe</span><span class="price__dur">30 min</span><span class="price__val">24&nbsp;€</span></li>
+            <li class="price rv"><span class="price__name">La Barbe Rapide</span><span class="price__dur">15 min</span><span class="price__val">16&nbsp;€</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3 class="rv"><span class="n">C</span>Coupe + barbe</h3>
+          <ul>
+            <li class="price rv"><span class="price__name">La Coupe Barbe</span><span class="price__dur">1 h</span><span class="price__val">46&nbsp;€</span></li>
+            <li class="price rv"><span class="price__name">La Coupe Barbe Confort</span><span class="price__dur">1 h 15</span><span class="price__val">56&nbsp;€</span></li>
+            <li class="price rv"><span class="price__name">La Coupe Cheveux Longs + Barbe</span><span class="price__dur">1 h 30</span><span class="price__val">61&nbsp;€</span></li>
+            <li class="price rv"><span class="price__name">La Coupe Transformation + Barbe</span><span class="price__dur">1 h 30</span><span class="price__val">61&nbsp;€</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3 class="rv"><span class="n">D</span>Finition</h3>
+          <ul>
+            <li class="price rv"><span class="price__name">Estompage Cheveux Blancs</span><span class="price__dur">15 min</span><span class="price__val">17&nbsp;€</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUTS RAIL (signature) -->
+  <section class="cuts dark" id="coupes" aria-labelledby="coupes-t">
+    <div class="wrap cuts__head">
+      <div>
+        <p class="label rv"><span class="n">04</span> — Coupes</p>
+        <h2 class="rv" id="coupes-t" style="margin-top:var(--space-3)">Sorti du <span>fauteuil.</span></h2>
+      </div>
+      <p class="cuts__note rv">Dégradés nets, boucles gardées, mi-longs travaillés. Quelques coupes signées Alex.</p>
+    </div>
+    <div class="cuts__rail" tabindex="0" aria-label="Galerie de coupes, faites défiler">
+      <figure class="cut rv"><div class="cut__img"><img src="assets/photos/photo-03.jpg" width="1170" height="1443" loading="lazy" decoding="async" style="object-position:40% 30%" alt="Dégradé à blanc sur les côtés, dessus court texturé, vue de profil"></div><figcaption><b>01</b>Dégradé haut, dessus texturé</figcaption></figure>
+      <figure class="cut rv" style="--i:1"><div class="cut__img"><img src="assets/photos/photo-10.jpg" width="1170" height="1487" loading="lazy" decoding="async" style="object-position:60% 30%" alt="Cheveux bouclés gardés sur le dessus, dégradé bas et contour net"></div><figcaption><b>02</b>Boucles, dégradé bas</figcaption></figure>
+      <figure class="cut rv" style="--i:2"><div class="cut__img"><img src="assets/photos/photo-11.jpg" width="1170" height="1312" loading="lazy" decoding="async" style="object-position:62% 40%" alt="Raie tracée à la tondeuse, côtés dégradés, coiffé sur le côté"></div><figcaption><b>03</b>Raie tracée, côtés dégradés</figcaption></figure>
+      <figure class="cut rv" style="--i:3"><div class="cut__img"><img src="assets/photos/photo-07.jpg" width="900" height="1600" loading="lazy" decoding="async" style="object-position:50% 30%" alt="Cheveux ondulés volumineux sur le dessus avec dégradé autour de l’oreille"></div><figcaption><b>04</b>Ondulé, dégradé autour de l’oreille</figcaption></figure>
+      <figure class="cut rv" style="--i:4"><div class="cut__img"><img src="assets/photos/photo-06.jpg" width="1170" height="1438" loading="lazy" decoding="async" style="object-position:62% 30%" alt="Coupe mi-longue blonde coiffée vers l’arrière"></div><figcaption><b>05</b>Mi-long coiffé en arrière</figcaption></figure>
+      <figure class="cut rv" style="--i:5"><div class="cut__img"><img src="assets/photos/photo-04.jpg" width="1170" height="1209" loading="lazy" decoding="async" style="object-position:50% 40%" alt="Barbe taillée et dégradée, côtés courts"></div><figcaption><b>06</b>Barbe taillée, côtés courts</figcaption></figure>
+    </div>
+    <div class="wrap cuts__foot">
+      <div class="cuts__progress" aria-hidden="true"><i></i></div>
+      <div class="cuts__ctrl">
+        <button type="button" data-dir="-1" aria-label="Photos précédentes"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button type="button" data-dir="1" aria-label="Photos suivantes"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="wrap" style="margin-top:var(--space-5)">
+      <a class="link" href="https://www.instagram.com/alx.barber/" target="_blank" rel="noopener" style="color:var(--on-dark);font-weight:600">Plus de coupes sur Instagram&nbsp;: @alx.barber</a>
+    </div>
+  </section>
+
+  <!-- HOURS + MAP -->
+  <section class="visit" id="horaires" aria-labelledby="horaires-t">
+    <div class="wrap grid">
+      <div class="visit__a">
+        <p class="label rv"><span class="n">05</span> — Horaires &amp; accès</p>
+        <div class="status rv" data-status hidden>
+          <p class="status__big" data-status-big>Ouvert</p>
+          <p class="status__small" data-status-small></p>
+        </div>
+        <h2 class="alt rv" id="horaires-t" data-status-fallback>Quand passer</h2>
+        <table class="hours rv">
+          <caption class="sr-only">Horaires d’ouverture</caption>
+          <tbody>
+            <tr data-day="lundi"><th scope="row">lundi</th><td>09:00–20:00</td></tr>
+            <tr data-day="mardi"><th scope="row">mardi</th><td>09:00–20:00</td></tr>
+            <tr data-day="mercredi"><th scope="row">mercredi</th><td>09:00–20:00</td></tr>
+            <tr data-day="jeudi"><th scope="row">jeudi</th><td>09:00–20:00</td></tr>
+            <tr data-day="vendredi" class="closed"><th scope="row">vendredi</th><td>Fermé</td></tr>
+            <tr data-day="samedi" class="closed"><th scope="row">samedi</th><td>Fermé</td></tr>
+            <tr data-day="dimanche" class="closed"><th scope="row">dimanche</th><td>Fermé</td></tr>
+          </tbody>
+        </table>
+        <p class="visit__note rv">Sur rendez-vous de préférence&nbsp;: les créneaux disponibles s’affichent en temps réel sur Planity.</p>
+      </div>
+      <div class="visit__b">
+        <div class="map rv">
+          <a class="map__fallback link" href="https://www.google.com/maps/place/?q=place_id:ChIJITRLkrXr9EcR5LC0roL-YsY" target="_blank" rel="noopener">Ouvrir le plan dans Google Maps</a>
+          <iframe src="https://www.google.com/maps?q=Alex%20Barber%20-%20Coiffeur%20Barbier%2C%20Chez%20L%E2%80%99Ind%C3%A9%20Barbershop%2C%203%20Quai%20Jules%20Courmont%2C%2069002%20Lyon&amp;output=embed"
+                  title="Plan : Alex Barber, 3 quai Jules Courmont, Lyon 2e" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="addr">
+          <div class="addr__line rv">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <p><strong>3 quai Jules Courmont</strong>Chez L’Indé Barbershop · 69002 Lyon</p>
+          </div>
+          <div class="addr__line rv">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="4.5" r="1.8"/><path d="M10 7.5v6h5l2.5 5.5M10 10.5h5M7.2 11.5a5.5 5.5 0 1 0 7.6 7"/></svg>
+            <p>Entrée accessible en fauteuil roulant</p>
+          </div>
+          <div class="addr__ctas rv">
+            <a class="btn btn--ink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Alex%20Barber%20-%20Coiffeur%20Barbier%2C%20Chez%20L%E2%80%99Ind%C3%A9%20Barbershop%2C%203%20Quai%20Jules%20Courmont%2C%2069002%20Lyon" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 21 3l-8 18-2-8z"/></svg>Itinéraire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-t">
+    <div class="wrap grid">
+      <div class="contact__intro">
+        <p class="label rv">06 — Rendez-vous</p>
+        <h2 class="rv" id="contact-t" style="margin-top:var(--space-4)">Votre prochaine coupe commence ici.</h2>
+        <p class="contact__sub rv">Réservez en ligne, appelez, ou écrivez un SMS à Alex. Du lundi au jeudi, de 9h à 20h.</p>
+      </div>
+      <nav class="rows" aria-label="Prendre rendez-vous">
+        <a class="rv" href="https://www.planity.com/alex-barber-69002-lyon" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+          <span><span class="t">Réserver</span><span class="s">Sur Planity, créneaux en direct</span></span>
+          <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        <a class="rv" href="tel:+33658229648">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          <span><span class="t">Appeler</span><span class="s">06 58 22 96 48</span></span>
+          <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        <a class="rv" href="sms:+33658229648?&amp;body=Bonjour%20Alex%2C%20je%20souhaiterais%20prendre%20rendez-vous%20pour%20une%20coupe.%20Quels%20cr%C3%A9neaux%20auriez-vous%20de%20libre%20%3F%20Merci.">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>
+          <span><span class="t">Écrire un SMS</span><span class="s">Message prêt à envoyer</span></span>
+          <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        <a class="rv" href="https://www.instagram.com/alx.barber/" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg>
+          <span><span class="t">Instagram</span><span class="s">@alx.barber</span></span>
+          <svg class="icon arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      </nav>
+    </div>
+  </section>
+</main>
+
+<footer class="footer dark">
+  <div class="wrap">
+    <div class="bigname" aria-hidden="true">Alex</div>
+    <div class="footer__grid">
+      <div>
+        <p><strong>Alex Barber — Coiffeur Barbier</strong><br>Barbier indépendant à Lyon depuis 2012.</p>
+      </div>
+      <address>Chez L’Indé Barbershop<br>3 quai Jules Courmont<br>69002 Lyon</address>
+      <div class="footer__links">
+        <a href="tel:+33658229648">06 58 22 96 48</a>
+        <a href="https://www.instagram.com/alx.barber/" target="_blank" rel="noopener" aria-label="Instagram @alx.barber">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg>Instagram</a>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <p>© <span data-year>2026</span> Alex Barber · Lyon 2e</p>
+      <p><a class="link" href="#main" style="display:inline-flex;align-items:center;min-height:44px">Haut de page ↑</a></p>
+    </div>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Actions rapides">
+  <a href="https://www.planity.com/alex-barber-69002-lyon" target="_blank" rel="noopener">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Réserver</a>
+  <a href="tel:+33658229648">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Appeler</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Alex%20Barber%20-%20Coiffeur%20Barbier%2C%20Chez%20L%E2%80%99Ind%C3%A9%20Barbershop%2C%203%20Quai%20Jules%20Courmont%2C%2069002%20Lyon" target="_blank" rel="noopener">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 21 3l-8 18-2-8z"/></svg>Itinéraire</a>
+</nav>
+
+<script>
+(() => {
+  const d = document, root = d.documentElement;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add('loaded')));
+
+  /* Header shrink */
+  const header = d.querySelector('.header');
+  const onScroll = () => header.classList.toggle('is-scrolled', scrollY > 40);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  /* Menu */
+  const btn = d.querySelector('.menu-btn'), menu = d.getElementById('menu');
+  const setMenu = (open) => {
+    btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    menu.classList.toggle('is-open', open); d.body.classList.toggle('menu-open', open);
+    header.classList.toggle('is-scrolled', open || scrollY > 40);
+    if (open) menu.querySelector('a').focus({ preventScroll: true });
+  };
+  btn.addEventListener('click', () => setMenu(btn.getAttribute('aria-expanded') !== 'true'));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+  d.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('is-open')) { setMenu(false); btn.focus(); } });
+
+  /* Reveals */
+  const els = d.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window && !reduce) {
+    const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    els.forEach((el) => io.observe(el));
+  } else els.forEach((el) => el.classList.add('in'));
+
+  /* Cuts rail controls + progress */
+  const rail = d.querySelector('.cuts__rail'), bar = d.querySelector('.cuts__progress');
+  const [prev, next] = d.querySelectorAll('.cuts__ctrl button');
+  const upd = () => {
+    const max = rail.scrollWidth - rail.clientWidth;
+    const p = max > 0 ? rail.scrollLeft / max : 1;
+    bar.style.setProperty('--p', (0.17 + p * 0.83).toFixed(3));
+    prev.disabled = rail.scrollLeft < 8; next.disabled = rail.scrollLeft > max - 8;
+  };
+  rail.addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
+  d.querySelectorAll('.cuts__ctrl button').forEach((b) => b.addEventListener('click', () => {
+    const card = rail.querySelector('.cut');
+    rail.scrollBy({ left: +b.dataset.dir * (card.offsetWidth + 16), behavior: reduce ? 'auto' : 'smooth' });
+  }));
+
+  /* Hours: today + live status (Europe/Paris) */
+  const HOURS = { lundi: '09:00–20:00', mardi: '09:00–20:00', mercredi: '09:00–20:00', jeudi: '09:00–20:00', vendredi: 'Fermé', samedi: 'Fermé', dimanche: 'Fermé' };
+  const DAYS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+  const parse = (v) => {
+    v = String(v || '').trim();
+    if (!v || /ferm/i.test(v)) return [];
+    if (/24\s*h|24\/24/i.test(v)) return [[0, 1440]];
+    return v.split(/[,;]/).map((r) => {
+      const m = r.match(/(\d{1,2})[:h.]?(\d{2})?\s*[–—-]\s*(\d{1,2})[:h.]?(\d{2})?/);
+      if (!m) return null;
+      const a = +m[1] * 60 + +(m[2] || 0); let b = +m[3] * 60 + +(m[4] || 0);
+      if (b <= a) b += 1440;
+      return [a, b];
+    }).filter(Boolean);
+  };
+  const fmt = (min) => { min %= 1440; const h = Math.floor(min / 60), m = min % 60; return h + 'h' + (m ? String(m).padStart(2, '0') : ''); };
+  let now;
+  try {
+    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Paris', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+    const g = (t) => parts.find((p) => p.type === t).value;
+    now = { day: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(g('weekday')), min: +g('hour') * 60 + +g('minute') };
+  } catch (e) { const n = new Date(); now = { day: n.getDay(), min: n.getHours() * 60 + n.getMinutes() }; }
+
+  const today = DAYS[now.day];
+  const row = d.querySelector('.hours tr[data-day="' + today + '"]');
+  if (row) { row.classList.add('today'); row.querySelector('th').insertAdjacentHTML('beforeend', '<span class="today-tag">Aujourd’hui</span>'); }
+
+  let open = null;
+  const prevDay = DAYS[(now.day + 6) % 7];
+  for (const [a, b] of parse(HOURS[prevDay])) if (b > 1440 && now.min < b - 1440) open = b - 1440;
+  for (const [a, b] of parse(HOURS[today])) if (now.min >= a && now.min < b) open = b;
+  let msg, big;
+  if (open !== null) { big = 'Ouvert'; msg = open >= 1440 && open - 1440 === 0 ? 'Ouvert jusqu’à minuit' : 'Ouvert maintenant · jusqu’à ' + fmt(open); }
+  else {
+    big = 'Fermé';
+    for (let i = 0; i < 8; i++) {
+      const name = DAYS[(now.day + i) % 7];
+      const r = parse(HOURS[name]).find(([a]) => i > 0 || a > now.min);
+      if (r) { msg = 'Fermé · ouvre ' + (i === 0 ? 'à ' : i === 1 ? 'demain à ' : name + ' à ') + fmt(r[0]); break; }
+    }
+    msg = msg || 'Fermé';
+  }
+  d.querySelectorAll('[data-badge]').forEach((b) => { b.classList.toggle('is-open', open !== null); b.querySelector('[data-badge-text]').textContent = msg; });
+  const st = d.querySelector('[data-status]');
+  if (st) {
+    st.hidden = false;
+    const bigEl = st.querySelector('[data-status-big]');
+    bigEl.innerHTML = big + (open !== null ? '<span class="dot" aria-hidden="true"></span>' : '');
+    st.querySelector('[data-status-small]').textContent = msg.replace(/^(Ouvert maintenant|Fermé) · /, '').replace(/^./, (c) => c.toUpperCase());
+    const fb = d.querySelector('[data-status-fallback]');
+    fb.classList.add('sr-only');
+  }
+
+  d.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+})();
+</script>
+<!--sf:preview--><div style="padding:18px 16px;font:13px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;text-align:center;background:#0f0f10;color:#a3a3a8">Aperçu réalisé par Aymen Jallouli pour Alex Barber - Coiffeur Barbier : ce site n'est pas encore le site officiel de l'établissement.</div><!--/sf:preview-->
+<!--sf:track--><script>(function(){try{var q=new URLSearchParams(location.search),r=q.get('r')||sessionStorage.getItem('sf_r');if(!r)return;sessionStorage.setItem('sf_r',r);navigator.sendBeacon("https://track.aymenjallouli.dev/t"+'?r='+encodeURIComponent(r)+'&p='+encodeURIComponent(location.pathname));}catch(e){}})();</script><!--/sf:track-->
+</body>
+</html>
